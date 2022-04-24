@@ -1,9 +1,15 @@
-import { createStore } from "vuex";
-
+import { createStore } from "vuex"
+import global from "./modules/global"
+import discover from "./modules/discover"
 export default createStore({
-  state: {},
-  getters: {},
-  mutations: {},
-  actions: {},
-  modules: {},
-});
+  modules: {
+    global: {
+      namespaced: true,
+      ...global
+    },
+    discover: {
+      namespaced: true,
+      ...discover
+    }
+  }
+})
